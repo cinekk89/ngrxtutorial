@@ -38,6 +38,6 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tutorial$ = this.store.select(state => state.tutorial.selectedTut);
+    this.tutorial$ = this.store.select(state => state.tutorials.selectedTut);
   }
 }

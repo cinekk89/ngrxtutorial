@@ -2,11 +2,6 @@ import { Tutorial } from 'src/app/models/tutorial.model';
 import * as TutorialActions from '../actions/tutorial.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
-// export interface TutorialState {
-//     tutorials: Tutorial[];
-//     selectedTut: Tutorial;
-// }
-
 export interface TutorialState extends EntityState<Tutorial> {
     selectedTut: Tutorial;
     // tutorials: Tutorial[];
@@ -30,20 +25,7 @@ export const initialTutorials: Tutorial[] = [
     }
 ];
 
-
-// const initialTutorial: Tutorial = {
-//     id: 1,
-//     name: 'Initial Tutorial',
-//     url: 'http://google.com'
-// };
-
-// export const initialState: TutorialState = {
-//     tutorials: [initialTutorial],
-//     selectedTut: null
-// };
-
 export function tutorialReducer(state: TutorialState = initialState, action: TutorialActions.Actions): TutorialState {
-    debugger;
     switch (action.type) {
         case TutorialActions.LOAD_TUTORIALS:
             return adapter.addMany(action.payload.tutorials, state);
@@ -54,7 +36,11 @@ export function tutorialReducer(state: TutorialState = initialState, action: Tut
         case TutorialActions.REMOVE_TUTORIAL:
             return adapter.removeOne(action.payload.id, state);
         case TutorialActions.SET_TUTORIAL:
-        case TutorialActions.GET_TUTORIALS:
+            const tut = state.entities[action.payload.id];
+            return {
+                ...state,
+                selectedTut: tut
+            };
         default:
             return state;
     }
