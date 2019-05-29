@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     StoreModule.forRoot({
-      tutorial: tutorialReducer,
+      tutorials: tutorialReducer,
       test: testReducer
     }),
     StoreDevtoolsModule.instrument({maxAge: 10})

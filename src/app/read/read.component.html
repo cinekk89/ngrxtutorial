@@ -1,7 +1,7 @@
-<div class="right" *ngIf="tutorials">
+<div class="right" *ngIf="tutorials$">
   <h3>Tutorials</h3>
   <ul>
-    <li class="tuts" *ngFor="let tutorial of tutorials | async; let i = index">
+    <li class="tuts" *ngFor="let tutorial of tutorials$ | async; let i = index">
       <span class="id" (click)="chooseToUpdate(tutorial.id)">{{ tutorial.id }}</span>
       <a [href]="tutorial.url" target="_blank">{{ tutorial.name }}</a>
       <span class="remove" (click)="removeTutorial(tutorial.id)">X</span>

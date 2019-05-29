@@ -3,7 +3,6 @@ import { AppState } from '../app.state';
 import { Store } from '@ngrx/store';
 import * as TutorialActions from '../actions/tutorial.actions';
 import { Tutorial } from '../models/tutorial.model';
-import { DataService } from '../services/data.service';
 import { Observable } from 'rxjs';
 
 @Component({
