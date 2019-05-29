@@ -1,10 +1,10 @@
 import { Tutorial } from 'src/app/models/tutorial.model';
 import * as TutorialActions from '../actions/tutorial.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import { State } from '@ngrx/store';
 
 export interface TutorialState extends EntityState<Tutorial> {
     selectedTut: Tutorial;
-    // tutorials: Tutorial[];
 }
 
 export const adapter: EntityAdapter<Tutorial> = createEntityAdapter<Tutorial>();
@@ -45,3 +45,11 @@ export function tutorialReducer(state: TutorialState = initialState, action: Tut
             return state;
     }
 }
+
+export const getSelectedTutorialId = (state: TutorialState) => state.selectedTut;
+
+const { selectIds, selectEntities, selectAll } = adapter.getSelectors();
+export const selectTutorialIds = selectIds;
+export const selectTutorialEntities = selectEntities;
+export const selectAllTutorials = selectAll;
+
