@@ -3,9 +3,9 @@ import { Tutorial } from '../models/tutorial.model';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../app.state';
-import * as TutorialActions from '../actions/tutorial.actions';
-import { initialTutorials } from '../reducers/tutorial.reducer';
-import { tutorialSelectors } from '../selectors/tutorial.selector';
+import * as TutorialActions from '../store/actions/tutorial.actions';
+import { initialTutorials } from '../store/reducers/tutorial.reducer';
+import { tutorialSelectors } from '../store/selectors/tutorial.selector';
 
 @Component({
   selector: 'app-read',

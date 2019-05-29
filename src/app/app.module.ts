@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { tutorialReducer } from './reducers/tutorial.reducer';
-import { testReducer } from './reducers/test.reducer';
+import { tutorialReducer } from './store/reducers/tutorial.reducer';
+import { testReducer } from './store/reducers/test.reducer';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
