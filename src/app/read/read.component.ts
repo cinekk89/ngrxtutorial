@@ -25,7 +25,6 @@ export class ReadComponent implements OnInit {
 
   removeTutorial(id: number) {
     this.store.dispatch(new TutorialActions.RemoveTutorial({id: id}));
-    
   }
 
   chooseToUpdate(id: number) {
