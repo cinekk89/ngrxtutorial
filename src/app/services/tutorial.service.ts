@@ -10,7 +10,6 @@ export class TutorialService {
   constructor() { }
 
   all(): Observable<Tutorial[]> {
-    debugger;
     const tutorials: Observable<Tutorial[]> = of([
       {
           id: 1,

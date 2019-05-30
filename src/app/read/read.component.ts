@@ -25,7 +25,6 @@ export class ReadComponent implements OnInit {
    }
 
   ngOnInit() {
-    debugger;
     this.store.dispatch(new TutorialActions.LoadTutorials({ tutorials: initialTutorials }));
   }
 

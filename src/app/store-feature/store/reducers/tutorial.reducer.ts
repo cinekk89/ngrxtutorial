@@ -1,7 +1,6 @@
 import { Tutorial } from 'src/app/models/tutorial.model';
 import * as TutorialActions from '../actions/tutorial.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { State } from '@ngrx/store';
 
 export interface TutorialState extends EntityState<Tutorial> {
     selectedTutId: number;
@@ -26,7 +25,6 @@ export const initialTutorials: Tutorial[] = [
 ];
 
 export function tutorialReducer(state: TutorialState = initialState, action: TutorialActions.Actions): TutorialState {
-    debugger;
     switch (action.type) {
         case TutorialActions.TUTORIALS_LOADED:
             return adapter.addMany(action.payload.tutorials, state);
