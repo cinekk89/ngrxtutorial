@@ -14,7 +14,7 @@ export const TUTORIALS_REMOVED      = '[TUTORIAL] Removed';
 export class LoadTutorials implements Action {
     readonly type = LOAD_TUTORIALS;
 
-    constructor(public payload: { tutorials: Tutorial[] }) { }
+    // constructor(public payload: { tutorials: Tutorial[] }) { }
 }
 
 export class SetTutorial implements Action {

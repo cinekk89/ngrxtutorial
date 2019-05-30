@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../app.state';
 import * as TutorialActions from '../store-feature/store/actions/tutorial.actions';
-import { initialTutorials } from '../store-feature/store/reducers/tutorial.reducer';
 import { tutorialSelectors } from '../store-feature/store/selectors/tutorial.selector';
 
 @Component({
@@ -25,7 +24,7 @@ export class ReadComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.store.dispatch(new TutorialActions.LoadTutorials({ tutorials: initialTutorials }));
+    this.store.dispatch(new TutorialActions.LoadTutorials());
   }
 
   removeTutorial(id: number) {
