@@ -4,12 +4,12 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { State } from '@ngrx/store';
 
 export interface TutorialState extends EntityState<Tutorial> {
-    selectedTut: Tutorial;
+    selectedTutId: number;
 }
 
 export const adapter: EntityAdapter<Tutorial> = createEntityAdapter<Tutorial>();
 export const initialState: TutorialState = adapter.getInitialState({
-    selectedTut: null,
+    selectedTutId: 0,
 });
 
 export const initialTutorials: Tutorial[] = [
@@ -36,17 +36,16 @@ export function tutorialReducer(state: TutorialState = initialState, action: Tut
         case TutorialActions.REMOVE_TUTORIAL:
             return adapter.removeOne(action.payload.id, state);
         case TutorialActions.SET_TUTORIAL:
-            const tut = state.entities[action.payload.id];
             return {
                 ...state,
-                selectedTut: tut
+                selectedTutId: action.payload.id
             };
         default:
             return state;
     }
 }
 
-export const getSelectedTutorialId = (state: TutorialState) => state.selectedTut;
+export const getSelectedTutorialId = (state: TutorialState) => state.selectedTutId;
 
 const { selectIds, selectEntities, selectAll } = adapter.getSelectors();
 export const selectTutorialIds = selectIds;

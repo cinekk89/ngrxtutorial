@@ -1,5 +1,11 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { TutorialState, selectTutorialIds, selectTutorialEntities, selectAllTutorials } from '../reducers/tutorial.reducer';
+import {
+     TutorialState,
+     selectTutorialIds,
+     selectTutorialEntities,
+     selectAllTutorials,
+     getSelectedTutorialId
+     } from '../reducers/tutorial.reducer';
 
 
 export const selectTutorialState = createFeatureSelector<TutorialState>('tutorials');
@@ -19,9 +25,15 @@ export const selectedAllTutorials = createSelector(
     selectAllTutorials
 );
 
+export const selectedTutorialId = createSelector(
+    selectTutorialState,
+    getSelectedTutorialId
+)
+
 export const tutorialSelectors = {
     selectTutorialState,
     selectedTutorialIds,
     selectedTutorialEntities,
-    selectedAllTutorials
+    selectedAllTutorials,
+    selectedTutorialId
 };
