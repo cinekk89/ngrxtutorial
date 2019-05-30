@@ -24,4 +24,16 @@ export class TutorialService {
 
     return tutorials;
   }
+
+  add(tutorial: Tutorial): Observable<Tutorial> {
+    return of(tutorial);
+  }
+
+  update(tutorial: Tutorial): Observable<Tutorial> {
+    return of(tutorial);
+  }
+
+  remove(tutorialId: number): Observable<number> {
+    return of(tutorialId);
+  }
 }

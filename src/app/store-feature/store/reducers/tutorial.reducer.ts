@@ -28,12 +28,12 @@ export function tutorialReducer(state: TutorialState = initialState, action: Tut
     switch (action.type) {
         case TutorialActions.TUTORIALS_LOADED:
             return adapter.addMany(action.payload.tutorials, state);
-        case TutorialActions.ADD_TUTORIAL:
+        case TutorialActions.TUTORIALS_ADDED:
             return adapter.addOne(action.payload.tutorial, state);
-        case TutorialActions.UPDATE_TUTORIAL:
+        case TutorialActions.TUTORIALS_UPDATED:
             return adapter.upsertOne(action.payload.tutorial, state);
-        case TutorialActions.REMOVE_TUTORIAL:
-            return adapter.removeOne(action.payload.id, state);
+        case TutorialActions.TUTORIALS_REMOVED:
+            return adapter.removeOne(action.payload.tutorialId, state);
         case TutorialActions.SET_TUTORIAL:
             return {
                 ...state,

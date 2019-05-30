@@ -56,13 +56,13 @@ export class TutorialsAdded implements Action {
 export class TutorialsUpdated implements Action {
     readonly type = TUTORIALS_UPDATED;
 
-    constructor(public payload: { tutorials: Tutorial }) { }
+    constructor(public payload: { tutorial: Tutorial }) { }
 }
 
 export class TutorialsRemoved implements Action {
     readonly type = TUTORIALS_REMOVED;
 
-    constructor(public payload: { tutorials: Tutorial }) { }
+    constructor(public payload: { tutorialId: number }) { }
 }
 
 export type Actions = LoadTutorials
