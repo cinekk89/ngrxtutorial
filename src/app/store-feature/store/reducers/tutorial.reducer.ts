@@ -26,8 +26,9 @@ export const initialTutorials: Tutorial[] = [
 ];
 
 export function tutorialReducer(state: TutorialState = initialState, action: TutorialActions.Actions): TutorialState {
+    debugger;
     switch (action.type) {
-        case TutorialActions.LOAD_TUTORIALS:
+        case TutorialActions.TUTORIALS_LOADED:
             return adapter.addMany(action.payload.tutorials, state);
         case TutorialActions.ADD_TUTORIAL:
             return adapter.addOne(action.payload.tutorial, state);

@@ -3,9 +3,9 @@ import { Tutorial } from '../models/tutorial.model';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../app.state';
-import * as TutorialActions from '../store/actions/tutorial.actions';
-import { initialTutorials } from '../store/reducers/tutorial.reducer';
-import { tutorialSelectors } from '../store/selectors/tutorial.selector';
+import * as TutorialActions from '../store-feature/store/actions/tutorial.actions';
+import { initialTutorials } from '../store-feature/store/reducers/tutorial.reducer';
+import { tutorialSelectors } from '../store-feature/store/selectors/tutorial.selector';
 
 @Component({
   selector: 'app-read',
@@ -25,6 +25,7 @@ export class ReadComponent implements OnInit {
    }
 
   ngOnInit() {
+    debugger;
     this.store.dispatch(new TutorialActions.LoadTutorials({ tutorials: initialTutorials }));
   }
 

@@ -1,10 +1,10 @@
 import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { AppState } from '../app.state';
 import { Store } from '@ngrx/store';
-import * as TutorialActions from '../store/actions/tutorial.actions';
+import * as TutorialActions from '../store-feature/store/actions/tutorial.actions';
 import { Tutorial } from '../models/tutorial.model';
 import { Observable, combineLatest, Subscription } from 'rxjs';
-import { tutorialSelectors } from '../store/selectors/tutorial.selector';
+import { tutorialSelectors } from '../store-feature/store/selectors/tutorial.selector';
 
 @Component({
   selector: 'app-create',
